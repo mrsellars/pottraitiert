@@ -1,4 +1,77 @@
-.underline
-{
-	text-decoration:underline;
+.margin-top {
+	margin-top: 20px;
 }
+
+.search-margin-left {
+	margin-left: 5px;
+}
+
+.white {
+	color:#fff;
+}
+
+.left-column-headers{
+	line-height:15px; 
+	text-transform:uppercase; 
+	font-weight:700
+}
+
+.cam {
+	 display: block; /* 'convert' <a> to <div> */
+	 background-position: center top;
+	 background-repeat: no-repeat;
+	 width: 31px;
+	 height: 19px;
+	 background-image: url('/Users/tk/pottraitiert/img/rect3859.png');
+}
+
+.cam:hover {
+	 background-image: url('/Users/tk/pottraitiert/img/rect3858.png');
+}
+
+ul {
+	list-style-type: none;
+	margin-left:0px;
+	margin-top:10px;
+}
+
+li {
+	margin-left:0px;
+}
+
+/*****************************************************/
+/* override default bootstrap stuff for sticky footer*/
+/*****************************************************/
+html,
+ body {
+   height: 100%;
+   /* The html and body elements cannot have any padding or margin. */
+ }
+
+ /* Wrapper for page content to push down footer */
+ .wrap {
+   min-height: 100%;
+   height: auto !important;
+   height: 100%;
+   /* Negative indent footer by it's height */
+   margin: 0 auto -60px;
+ }
+
+ /* Set the fixed height of the footer here */
+ .push,
+ .footer {
+   height: 60px;
+ }
+ .footer {
+   background-color: #333;
+ }
+
+ /* Lastly, apply responsive CSS fixes as necessary */
+ @media (max-width: 767px) {
+   .footer {
+     margin-left: -20px;
+     margin-right: -20px;
+     padding-left: 20px;
+     padding-right: 20px;
+   }
+ }

@@ -107,9 +107,7 @@ button,
 input,
 select,
 textarea {
-  margin: 0;
-  font-size: 100%;
-  vertical-align: middle;
+  
 }
 button,
 input {
@@ -144,7 +142,7 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, FreeSans, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
@@ -1063,7 +1061,7 @@ table th[class*="span"],
 .navbar-search .search-query {
   margin-bottom: 0;
   padding: 4px 14px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, FreeSans, sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 1;
