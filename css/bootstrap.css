@@ -107,7 +107,9 @@ button,
 input,
 select,
 textarea {
-  
+  margin: 0;
+  font-size: 100%;
+  vertical-align: middle;
 }
 button,
 input {
@@ -142,18 +144,18 @@ textarea {
 }
 body {
   margin: 0;
-  font-family: Arial, Helvetica, FreeSans, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
   color: #333333;
   background-color: #ffffff;
 }
 a {
-  color: #0088cc;
+  color: #333;
   text-decoration: none;
 }
 a:hover {
-  color: #005580;
+  color: #333;
   text-decoration: underline;
 }
 .img-rounded {
