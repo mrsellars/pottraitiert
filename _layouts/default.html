@@ -3,9 +3,9 @@
   <head>
     <title>pottraitiert</title>
     <!-- Bootstrap -->
-    <link href="../css/bootstrap.css" rel="stylesheet" media="screen">
+    <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
 	<!-- Pottraitiert -->
-	<link href="../css/pottraitiert.css" rel="stylesheet" media="screen">
+	<link href="/css/pottraitiert.css" rel="stylesheet" media="screen">
   </head>
   <body>
 	<div class="wrap">
@@ -22,21 +22,14 @@
 		<div class="span2">
 		<div class="left-column-headers" style="margin-top:0px;">Archiv</div>
 		<ul>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
-		<li>Toller Beitrag</li>
+		{% for post in site.posts %}
+		<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+		{% endfor %}
 		</ul>
 		<div class="margin-top left-column-headers">Blogroll</div>
 		<ul>
 		<li><a href="http://jeriko.de">jeriko</a></li>
+		<li><a href="http://www.klangboot.de/">klangboot</a></li>
 		<li><a href="http://morganmaassen.tumblr.com/">morganmaassen</a></li>
 		<li><a href="http://ruhrgestalten.tumblr.com/">ruhrgestalten</a></li>
 		<li><a href="http://ruhrspeak.de/">ruhrspeak</a></li>
@@ -57,6 +50,5 @@
 		</div>
 	</div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
   </body>
 </html>
