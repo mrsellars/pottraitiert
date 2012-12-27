@@ -26,9 +26,12 @@ li {
 	margin-left:0px;
 }
 
-.with-border {
-	margin-bottom: 40px; 
-	background: transparent url(../img/background_border.jpg) repeat-y 715px 0px;
+.with-border { 
+	background: transparent url(../img/background_border.jpg) repeat-y 815px 0px;
+}
+
+.margin-bottom {
+	margin-bottom: 40px;
 }
 
 /*******************************************************/

@@ -1,8 +1,8 @@
 ---
-layout: 2col
+layout: default
 ---
-
 {% assign first_post = {{site.posts | first}} %}
-<img src="{{ first_post.top_image}}">
-<h2>{{first_post.title}} <small>{{first_post.date | date: "%d.%m.%Y"}}</small></h2>   
+	{% if first_post.top_image %}
+		<img src="{{page.top_image}}">
+	{% endif %}
 {{first_post.content}}

@@ -1,6 +1,8 @@
 ---
-layout: 2col
+layout: default
 ---
-<img src="{{page.top_image}}">
-<h2>{{page.title}} <small>{{page.date | date: "%d.%m.%Y"}}</small></h2>
+{% if page.top_image %}
+	<img src="{{page.top_image}}">
+{% endif %}
+	<h2 class="margin-top:0px;">{{page.title}} <small>{{page.date | date: "%d.%m.%Y"}}</small></h2>
 {{content}}
