@@ -1,1 +1,1 @@
-jekyll
+command: jekyll
