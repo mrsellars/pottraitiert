@@ -34,6 +34,35 @@ li {
 	margin-bottom: 40px;
 }
 
+textarea, input { 
+	outline: 0 none; 
+}
+
+textarea, input[type="text"] {
+	background-position: 0 0;
+	    background-repeat: no-repeat;
+	    border: 1px solid #333333;
+	    font-size: 12px;
+	    line-height: 20px;
+	    padding: 1px;
+	    width: 50%;
+}
+
+label {
+  display: inline-block;
+  line-height: 1.8;
+  vertical-align: top;
+  width: 120px;
+}
+
+h1 a:hover {
+	text-decoration:none;
+}
+
+.error {
+	color: #900;
+	margin-bottom:20px;
+}
 /*******************************************************/
 /* override default bootstrap stuff (e.g.sticky footer)*/
 /*******************************************************/
@@ -43,10 +72,15 @@ html,
 	line-height:22px;
 	/* The html and body elements cannot have any padding or margin. */
  }
-h2 {
-	margin-top:20px;
+
+h1, h2{
+	text-transform:uppercase;
 }
 
+h2.zero_line_height {
+	line-height:0px;
+}
+	
 h2 small {
 	color: #777;
 }
@@ -67,6 +101,21 @@ h2 small {
 
 .footer {
 	background-color: #333333;
+}
+
+.footer a {
+  color: #FFF;
+  text-decoration: none;
+}
+.footer a:hover {
+  color: #FFF;
+  text-decoration: underline;
+}
+
+img {
+	border:none;
+	display:block;
+	-moz-border-radius: none;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */

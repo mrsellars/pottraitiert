@@ -1,1 +1,1 @@
-permalink: pretty
+exclude: views pottraitiert.rb config.ru Gemfile Gemfile.lock README
