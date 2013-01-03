@@ -1,5 +1,2 @@
-require 'pottraitiert'
- 
-use Rack::ShowExceptions
- 
-run Pottraitiert.new
+require './pottraitiert'
+run Sinatra::Application
