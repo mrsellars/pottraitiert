@@ -1,1 +1,1 @@
-include: views pottraitiert.rb config.ru Gemfile Gemfile.lock README Procfile vendor
+exclude: views pottraitiert.rb config.ru Gemfile Gemfile.lock README Procfile vendor
