@@ -2,6 +2,10 @@
 	margin-top: 20px;
 }
 
+.zero-margin-top {
+	margin-top: 0px;
+}
+
 .search-margin-left {
 	margin-left: 5px;
 }
@@ -52,7 +56,7 @@ label {
   display: inline-block;
   line-height: 1.8;
   vertical-align: top;
-  width: 120px;
+  width: 250px;
 }
 
 h1 a:hover {
@@ -62,6 +66,18 @@ h1 a:hover {
 .error {
 	color: #900;
 	margin-bottom:20px;
+}
+
+#recaptcha_image {
+	display: inline-block;
+	/*IE7 hack*/
+	*display: inline;
+	*zoom: 1;
+	margin-top:5px;
+}
+
+.captcha-buttons {
+	margin-left:10px;
 }
 /*******************************************************/
 /* override default bootstrap stuff (e.g.sticky footer)*/
@@ -110,12 +126,6 @@ h2 small {
 .footer a:hover {
   color: #FFF;
   text-decoration: underline;
-}
-
-img {
-	border:none;
-	display:block;
-	-moz-border-radius: none;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */

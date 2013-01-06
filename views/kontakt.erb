@@ -34,17 +34,44 @@
 			Kontaktformular.<br><br>
 			<% end %>
 			
-			Die mit &#42; gekennzeichneten Felder müssen ausgefüllt werden.
-			<form action=<%= url('/nachricht') %> method="post">
+			<script type="text/javascript">
+				 var RecaptchaOptions = {
+				    theme : 'custom',
+				    custom_theme_widget: 'recaptcha_widget'
+				 };
+			</script>
 			
+			Die mit &#42; gekennzeichneten Felder müssen ausgefüllt werden.
+			<form class="form-horizontal well" action=<%= url('/nachricht') %> method="post">
 				<ul class="margin-top">
-				<li><label>Name&#42;</label><input type='text' name="nachricht[name]" <%= "value=#{params[:nachricht][:name]}" unless params[:nachricht].nil? || params[:nachricht][:name].empty? %> /></li>
-				<li><label>Email&#42;</label><input type='text' name="nachricht[email]" <%= "value=#{params[:nachricht][:email]}" unless params[:nachricht].nil? || params[:nachricht][:email].empty? %> /></li>
-				<li><label>Nachricht&#42;</label><textarea name="nachricht[text]"rows="10" ><%= params[:nachricht][:text] unless params[:nachricht].nil? || params[:nachricht][:text].empty? %></textarea></li>
+				<li><label>Name&#42;</label><input type='text' name="nachricht[name]" <%= "value=#{params[:nachricht][:name]}" unless params[:nachricht].nil? || params[:nachricht].empty? || params[:nachricht][:name].empty? %> /></li>
+				<li><label>Email&#42;</label><input type='text' name="nachricht[email]" <%= "value=#{params[:nachricht][:email]}" unless params[:nachricht].nil? || params[:nachricht].empty? || params[:nachricht][:email].empty? %> /></li>
+				<li><label>Nachricht&#42;</label><textarea name="nachricht[text]"rows="10" ><%= params[:nachricht][:text] unless params[:nachricht].nil? || params[:nachricht].empty? || params[:nachricht][:text].empty? %></textarea></li>
+				<div id="recaptcha_widget">
+					<li><label>reCAPTCHA 
+						<span class="captcha-buttons">
+							<a class="btn" title="reCAPTCHA neu laden"href="javascript:Recaptcha.reload()"><i class="icon-refresh"></i></a>
+		  					<a class="btn recaptcha_only_if_image" title="Audio reCAPTCHA" href="javascript:Recaptcha.switch_type('audio')"><i class="icon-headphones"></i></a>
+							<a class="btn recaptcha_only_if_audio" title="Grafik reCAPTCHA" href="javascript:Recaptcha.switch_type('image')"><i class="icon-picture"></i></a>
+				    		<a class="btn" title="Hilfe zu reCAPTCHA"href="javascript:Recaptcha.showhelp()"><i class="icon-question-sign"></i></a>
+						</span>
+						</label>
+						<div id="recaptcha_image"></div></li>
+				
+						<li><label>Bitte die Wörter/Nummern eingeben&#42;</label><input type="text" id="recaptcha_response_field" class="input-recaptcha" name="recaptcha_response_field" /></li>
+				</div>
+						
+				<script type="text/javascript" src="https://www.google.com/recaptcha/api/challenge?k=6Lc2JtsSAAAAABS8x8zEh7V83tDd6t0AFDtmcwuW"></script>
+				
+				<noscript>
+					<iframe src="http://www.google.com/recaptcha/api/noscript?k=6Lc2JtsSAAAAABS8x8zEh7V83tDd6t0AFDtmcwuW" height="300" width="500" frameborder="0"></iframe><br>
+					<textarea name="recaptcha_challenge_field"></textarea>
+						<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+				</noscript>	
+				</ul>
 				<input class="margin-top" type="submit" value="Abenden">
-				<ul>
-		
 			</form>
+			
 			<h2 id="impressum" class="margin-top">Impressum</h2>
 			
 			Angaben gemäß &sect; 5 TMG:
@@ -122,5 +149,6 @@
 		</div>
 	</div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
   </body>
 </html>
