@@ -40,7 +40,7 @@ post '/nachricht'do
    	  :password             => ENV['SENDGRID_PASSWORD'],
    	  :authentication       => :plain,
    	  :domain               => 'heroku.com'
-   	})
+   	}
    })
    @notice = 'Deine Nachricht wurde verschickt :-).'
    params[:nachricht] = {}
