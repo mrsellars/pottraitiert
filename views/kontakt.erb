@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>POTTRAITIERT</title>
+	<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
     <!-- Bootstrap -->
     <link href="/css/bootstrap.css" rel="stylesheet" media="screen">
 	<!-- Pottraitiert -->
@@ -34,17 +35,16 @@
 			Kontaktformular.<br><br>
 			<% end %>
 			
-			<script type="text/javascript">
-				 var RecaptchaOptions = {
-				    theme : 'custom',
-				    custom_theme_widget: 'recaptcha_widget'
-				 };
-			</script>
 			
 			Die mit &#42; gekennzeichneten Felder müssen ausgefüllt werden.
 			<form class="form-horizontal well" action=<%= url('/nachricht') %> method="post">
+				<script type="text/javascript">
+					 var RecaptchaOptions = {
+					    theme : 'custom',
+					    custom_theme_widget: 'recaptcha_widget'
+					 };
+				</script>
 				<ul class="margin-top">
-				<li><label>Name&#42;</label><input type='text' name="nachricht[name]" <%= "value=#{params[:nachricht][:name]}" unless params[:nachricht].nil? || params[:nachricht].empty? || params[:nachricht][:name].empty? %> /></li>
 				<li><label>Email&#42;</label><input type='text' name="nachricht[email]" <%= "value=#{params[:nachricht][:email]}" unless params[:nachricht].nil? || params[:nachricht].empty? || params[:nachricht][:email].empty? %> /></li>
 				<li><label>Nachricht&#42;</label><textarea name="nachricht[text]"rows="10" ><%= params[:nachricht][:text] unless params[:nachricht].nil? || params[:nachricht].empty? || params[:nachricht][:text].empty? %></textarea></li>
 				<div id="recaptcha_widget">
@@ -148,7 +148,5 @@
 			</div>
 		</div>
 	</div>
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
   </body>
 </html>
