@@ -16,31 +16,9 @@
 			</div>
 	</div>
 	<div class="row margin-top margin-bottom">
-		<div class="span8">
-			{{ content }}
-		</div>
-		<div class="span2">
-		<div class="left-column-headers" class="zero-margin-top">Artikel</div>
-		<ul>
-		{% for post in site.posts %}
-			{% unless post.categories contains "photos" %}
-				<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-			{% endunless %}
-		{% endfor %}
-		</ul>
-		<div class="margin-top left-column-headers">Blogroll</div>
-		<ul>
-		<li><a href="http://jeriko.de">jeriko</a></li>
-		<li><a href="http://www.klangboot.de/">klangboot</a></li>
-		<li><a href="http://morganmaassen.tumblr.com/">morganmaassen</a></li>
-		<li><a href="http://ruhrgestalten.tumblr.com/">ruhrgestalten</a></li>
-		<li><a href="http://ruhrspeak.de/">ruhrspeak</a></li>
-		<li><a href="http://talesofendurance.tumblr.com/">talesofendurance</a></li>
-		</ul>
-		</div>
-	</div>
+		{{ content }}
     </div>
-	
+	</div>
 	<div class="push"></div>
     </div>
 
@@ -52,4 +30,10 @@
 		</div>
 	</div>
   </body>
+  	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script>
+	$(document).ready(function () {
+	        $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+	    });
+	</script>
 </html>

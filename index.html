@@ -5,4 +5,20 @@ layout: default
 	{% if first_post.top_image %}
 		<img src="{{page.top_image}}">
 	{% endif %}
-{{first_post.content}}
+	<div class="span8">
+		{{ first_post.content }}
+	</div>
+	<div class="span2">
+	<div class="left-column-headers" class="zero-margin-top">Artikel</div>
+	<ul>
+	{% for post in site.posts %}
+		{% if post == first_post } %}
+			<li class="active">
+		{% else %}
+			<li>	
+		{% endif %}
+		<a href="{{ post.url }}">{{ post.title }}</a></li>
+	{% endfor %}
+	</ul>
+	{% include inspiration.html %}
+	</div>
