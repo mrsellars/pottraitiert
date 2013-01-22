@@ -1,0 +1,26 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<rss version="2.0">
+  <channel>
+    <title>POTTRAITIERT</title>
+    <link>http://www.pottraitiert.de</link>
+    <description>Das Ruhrgebiet portraitiert.</description>
+    <language>de-de</language>
+    <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
+
+    {% for post in site.posts %}
+    <item>
+      <title>{{ post.title }}</title>
+      <link>http://localhost:4567{{ post.url }}</link>
+      <pubDate>{{ post.date | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+      <author>tim@pottraitiert.de (Tim)</author>
+      <guid>http://localhost:4567{{ post.url }}</guid>
+      <description>{{ post.content | xml_escape }}</description>
+    </item>
+    {% endfor %}
+
+  </channel> 
+</rss>
