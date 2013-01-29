@@ -21,7 +21,7 @@ post '/nachricht'do
  @notice = ''
  @errors = {}
  email = params[:nachricht][:email]
- #@errors[:email] = 'Bitte eine richtige Email-Adresse angeben.' #if (email.empty? || valid_email?(email).nil?)
+ @errors[:email] = 'Bitte eine richtige Email-Adresse angeben.' if (email.empty? || valid_email?(email).nil?)
  @errors[:text]  = 'Bitte einen Text angeben.' if params[:nachricht][:text].empty?
  @errors[:captcha] = 'Das eingegebene reCAPTCHA war falsch.' unless recaptcha_valid?
 
