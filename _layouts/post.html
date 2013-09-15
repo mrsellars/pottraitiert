@@ -4,10 +4,12 @@ layout: default
 {% if page.top_image %}
 	<img src="{{page.top_image}}">
 {% endif %}
-	<div class="span8">
-		{{ content }}
-	</div>
-	<div class="span2">
+
+<div class="span8">
+	{{ content }}
+</div>
+
+<div class="span2">
 	<div class="left-column-headers" class="zero-margin-top">Artikel</div>
 	<ul>
 	{% for post in site.posts %}
@@ -15,4 +17,4 @@ layout: default
 	{% endfor %}
 	</ul>
 	{% include informationen.html %}
-	</div>
+</div>

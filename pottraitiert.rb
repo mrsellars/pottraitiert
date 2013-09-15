@@ -10,11 +10,11 @@ configure do
 end
 
 get '/' do
-    redirect '/index.html'
+  redirect '/index.html'
 end
 
 get '/kontakt.html' do
-    erb :kontakt
+  erb :kontakt
 end
 
 post '/nachricht'do
@@ -27,18 +27,18 @@ post '/nachricht'do
 
  if @errors.empty?
    Pony.mail({:from => params[:nachricht][:email],
-   	:to => 'tkeller.online@googlemail.com',
-   	:subject => "Nachricht von pottraitiert.de",
-   	:body => params[:nachricht][:text],
-   	:port => '587',
-   	:via => :smtp,
-   	:via_options => {
-   	  :address              => 'smtp.sendgrid.net',
-   	  :port                 =>  587,
-   	  :user_name            => ENV['SENDGRID_USERNAME'],
-   	  :password             => ENV['SENDGRID_PASSWORD'],
-   	  :authentication       => :plain,
-   	  :enable_starttls_auto => true
+     :to => 'tkeller.online@googlemail.com',
+     :subject => "Nachricht von pottraitiert.de",
+     :body => params[:nachricht][:text],
+     :port => '587',
+     :via => :smtp,
+     :via_options => {
+       :address              => 'smtp.sendgrid.net',
+       :port                 =>  587,
+       :user_name            => ENV['SENDGRID_USERNAME'],
+       :password             => ENV['SENDGRID_PASSWORD'],
+       :authentication       => :plain,
+       :enable_starttls_auto => true
    	}
    })
    @notice = 'Deine Nachricht wurde verschickt :-).'
@@ -46,7 +46,6 @@ post '/nachricht'do
  else
    @notice = 'Es ist ein Fehler aufgetreten :-(.'
  end
- 
  erb :kontakt
 end
 
