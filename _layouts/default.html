@@ -9,6 +9,18 @@
 		<link rel="shortcut icon" href="/img/fav_icon.png">
 		<meta property="og:title" content="POTTRAITIERT" />
 		<meta property="og:type" content="article" />
+		{% if page.site_name %}
+			<meta property="og:site_name" content="{{page.site_name}}"/>
+		{% endif %}
+		{% if page.url %}
+			<meta property="og:url" content="{{page.url}}" />
+		{% endif %}
+		{% if page.image %}
+			<meta property="og:image" content="{{page.image}}" />
+		{% endif %}
+		{% if page.description %}
+			<meta property="og:description" content="{{page.description}}" />
+		{% endif %}	
 	</head>
 	<body>
 		<div class="container">
